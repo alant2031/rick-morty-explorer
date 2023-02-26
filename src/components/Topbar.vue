@@ -1,6 +1,6 @@
 <template>
   <el-menu
-    :default-active="0"
+    :default-active="'0'"
     class="el-menu-demo"
     mode="horizontal"
     :ellipsis="false"
