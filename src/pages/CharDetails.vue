@@ -12,6 +12,9 @@
           episode {
             episode
           }
+          location {
+            dimension
+          }
         }
       }
     `"
@@ -47,6 +50,9 @@
               </p>
               <p>Gender: {{ data.character.gender }}</p>
               <p>Status: {{ data.character.status }}</p>
+              <p>
+                Location: {{ data.character.location.dimension }}
+              </p>
             </div>
             <div class="c3">
               <h3>
@@ -88,6 +94,7 @@ export default {
   .container {
     display: flex;
     justify-content: space-around;
+    flex-direction: row;
     margin: 14px;
   }
 

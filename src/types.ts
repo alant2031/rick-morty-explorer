@@ -2,15 +2,15 @@ export interface ICharacter {
 	id: string;
 	name: string;
 	species: string;
-	episode: Episode[];
-	__typename: typeName;
+	status: string;
+	gender: string;
+	type: string;
+	__typename: "Character" | "Episode";
 }
 
-type Episode =
-	| number
-	| {
-			episode: string;
-			__typename: typeName;
-	  };
+export type Episode = {
+	episode: string;
+	__typename: typeName;
+};
 
 type typeName = "Character" | "Episode";

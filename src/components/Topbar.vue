@@ -1,12 +1,12 @@
 <template>
   <el-menu
-    :default-active="'0'"
+    :default-active="'1'"
     class="el-menu-demo"
     mode="horizontal"
     :ellipsis="false"
 
   >
-    <el-menu-item index="0" @click="navigate('/')">
+    <el-menu-item index="0">
       <div class="logo">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Rick_and_Morty.svg/1200px-Rick_and_Morty.svg.png" alt="logo" />
       </div>

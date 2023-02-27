@@ -25,33 +25,34 @@
 
           <el-input v-model="input" placeholder="Search character" style="height: 55px; font-size: xx-large;" />
         </div>
-        <ul class="items">
-          <li class="item" v-for="char in data.characters.results" :key="char.id" @click="navigate(`characters/${char.id}`)">
-            {{ char.id }} - {{ char.name }}
-          </li>
-        </ul>
+        <div class="pagination">
+          <Pagination :page="page" :set-page="setPage" />
+        </div>
+          <ul>
+            <li v-for="char in data.characters.results" :key="char.id" @click="navigate(`characters/${char.id}`)">
+              {{ char.name }}
+            </li>
+          </ul>
+        
       </div>
 
       <!-- No result -->
       <div v-else class="no-result">No result :(</div>
     </template>
   </ApolloQuery>
-  <div class="pagination">
-
-    <Pagination :page="page" :set-page="setPage" />
-  </div>
+  
 </template>
 
 <script lang="ts">
 import { RouteLocationRaw } from 'vue-router';
 import Pagination from '../components/Pagination.vue'
-import Table from '../components/Table.vue';
 const test = "morty"
 export default {
   data() {
     return {
       page: 1,
       input: "",
+      size: '32px',
       filter: {
         name: `""`
       }
@@ -71,17 +72,20 @@ export default {
       this.filter.name = `"${c}"`
     }
   },
-  components: { Pagination, Table }
+  components: { Pagination }
 }
 </script>
 
-<style>
-  .item:hover {
+<style scoped>
+  li:hover {
     cursor: pointer;
     color: blue;
   }
-  .items {
-    margin: 10px;
+  li {
+    list-style-type: circle;
+  }
+  ul {
+    margin-left: 40px;
   }
   .search-bar {
     display: flex;
@@ -92,5 +96,14 @@ export default {
   .pagination {
     display: flex;
     justify-content: center;
+    margin: 10px 0;
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 200px;
+    padding: 20px 0;
   }
 </style>
