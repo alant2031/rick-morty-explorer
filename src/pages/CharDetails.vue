@@ -4,7 +4,14 @@
 
 <script>
 export default {
-
+  data() {
+    return {
+      id: ""
+    }
+  },
+  created() {
+    console.log(this.$route.params)
+  }
 }
 </script>
 
