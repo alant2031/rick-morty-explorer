@@ -98,12 +98,4 @@ export default {
     justify-content: center;
     margin: 10px 0;
   }
-
-  .container {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    margin: 0 200px;
-    padding: 20px 0;
-  }
 </style>
