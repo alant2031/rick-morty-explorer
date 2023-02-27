@@ -1,6 +1,5 @@
 <template>
   <el-pagination
-    small
     background
     layout="prev, pager, next"
     :page-count="42"

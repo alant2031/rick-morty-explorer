@@ -1,5 +1,5 @@
-query GET_CHARACTERS ($page: Int!, $filter: String) {
-  characters(page: $page, filter: { name: $filter}) {
+query GET_CHARACTERS ($page: Int!, $filter: { name: String}) {
+  characters(page: $page, filter: $filter) {
     rresults {
       id
       name

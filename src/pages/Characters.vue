@@ -14,16 +14,16 @@
   >
     <template v-slot="{ result: { loading, error, data } }">
       <!-- Loading -->
-      <div v-if="loading" class="loading apollo">Loading...</div>
+      <div v-if="loading" class="loading">Loading...</div>
 
       <!-- Error -->
-      <div v-else-if="error" class="error apollo">An error occurred</div>
+      <div v-else-if="error" class="error">An error occurred</div>
 
       <!-- Result -->
-      <div v-else-if="data" class="result apollo">
+      <div v-else-if="data" class="result">
         <div class="search-bar">
 
-          <el-input v-model="input" placeholder="Search character" />
+          <el-input v-model="input" placeholder="Search character" style="height: 55px; font-size: xx-large;" />
         </div>
         <ul class="items">
           <li class="item" v-for="char in data.characters.results" :key="char.id" @click="navigate(`characters/${char.id}`)">
@@ -33,7 +33,7 @@
       </div>
 
       <!-- No result -->
-      <div v-else class="no-result apollo">No result :(</div>
+      <div v-else class="no-result">No result :(</div>
     </template>
   </ApolloQuery>
   <div class="pagination">
